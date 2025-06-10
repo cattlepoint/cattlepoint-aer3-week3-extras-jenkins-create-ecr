@@ -8,7 +8,7 @@ pipeline {
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'              // adjust if needed
         STACK_NAME        = 'CreateECRRepo'
-        TEMPLATE_FILE     = 'ecr-repo.yml'            // CloudFormation template in repo
+        TEMPLATE_FILE     = 'ecr-repo.yaml'           // CloudFormation template in repo
     }
 
     stages {
@@ -22,7 +22,7 @@ pipeline {
                     aws cloudformation deploy \
                       --template-file ${TEMPLATE_FILE} \
                       --stack-name ${STACK_NAME} \
-                      --parameter-overrides RepositoryName=${ECR_REPO_NAME} \
+                      --parameter-overrides RepositoryName=${params.ECR_REPO_NAME} \
                       --capabilities CAPABILITY_NAMED_IAM
                 """
             }
