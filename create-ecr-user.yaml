@@ -27,6 +27,9 @@ Resources:
               - cloudformation:DeleteStack
               - cloudformation:DescribeStacks
               - cloudformation:DescribeStackEvents
+              - cloudformation:CreateChangeSet
+              - cloudformation:DescribeChangeSet
+              - cloudformation:ExecuteChangeSet
             Resource: "*"
           - Effect: Allow
             Action:
