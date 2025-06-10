@@ -19,6 +19,7 @@ Resources:
             Action:
               - ecr:CreateRepository
               - ecr:DescribeRepositories
+              - ecr:DeleteRepository
             Resource: "*"
           - Effect: Allow
             Action:
