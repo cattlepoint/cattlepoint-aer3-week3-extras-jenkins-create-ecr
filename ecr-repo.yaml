@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Simple template to create an ECR repository.
+
+Parameters:
+  RepositoryName:
+    Type: String
+    Description: Name of the ECR repository to create
+    Default: my-app
+
+Resources:
+  ECRRepo:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: !Ref RepositoryName
+
+Outputs:
+  RepositoryUri:
+    Description: URI of the created ECR repository
+    Value: !GetAtt ECRRepo.RepositoryUri
