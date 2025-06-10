@@ -19,11 +19,17 @@ Resources:
             Action:
               - ecr:CreateRepository
               - ecr:DescribeRepositories
+            Resource: "*"
+          - Effect: Allow
+            Action:
               - cloudformation:CreateStack
               - cloudformation:UpdateStack
               - cloudformation:DeleteStack
               - cloudformation:DescribeStacks
               - cloudformation:DescribeStackEvents
+            Resource: "*"
+          - Effect: Allow
+            Action:
               - iam:PassRole
             Resource: "*"
 
