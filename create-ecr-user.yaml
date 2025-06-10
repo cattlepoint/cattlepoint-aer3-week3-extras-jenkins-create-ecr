@@ -30,6 +30,7 @@ Resources:
               - cloudformation:CreateChangeSet
               - cloudformation:DescribeChangeSet
               - cloudformation:ExecuteChangeSet
+              - cloudformation:GetTemplateSummary
             Resource: "*"
           - Effect: Allow
             Action:
